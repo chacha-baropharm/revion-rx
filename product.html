@@ -28,9 +28,8 @@
     </nav>
 
     <div class="pdp__layout">
-      <!-- LEFT — gallery + sections scroll -->
-      <div class="pdp__main">
-        <!-- Gallery -->
+      <!-- Gallery (left on desktop, top on mobile) -->
+      <div class="pdp__gallery-wrap">
         <div class="gallery">
           <div class="gallery__thumbs">
             <button class="gallery__thumb is-active" data-src="images/product-cream-1.webp" aria-label="이미지 1"><img src="images/product-cream-1.webp" alt="" /></button>
@@ -47,7 +46,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Sections (tabs + detail + reviews + qa + shipping) -->
+      <div class="pdp__sections">
         <!-- Sticky tabs -->
         <nav class="pdp-tabs" aria-label="상세 탭">
           <div class="pdp-tabs__inner">

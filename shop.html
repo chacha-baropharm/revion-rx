@@ -23,7 +23,8 @@
 <section class="section" style="padding-top: clamp(40px,5vw,72px);">
   <div class="container">
     <div class="shop-layout">
-      <aside class="shop-filter">
+      <button type="button" class="shop-filter-toggle" id="filter-toggle" aria-expanded="false">필터 보기</button>
+      <aside class="shop-filter" id="shop-filter">
         <section>
           <h3>카테고리</h3>
           <ul>
@@ -157,5 +158,16 @@
 <div data-partial="marquee"></div>
 <div data-partial="footer"></div>
 <script src="partials.js"></script>
+<script>
+  const btn = document.getElementById('filter-toggle');
+  const filter = document.getElementById('shop-filter');
+  btn?.addEventListener('click', () => {
+    const open = filter.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? '필터 닫기' : '필터 보기';
+    btn.appendChild(document.createTextNode(''));
+  });
+</script>
 </body>
 </html>

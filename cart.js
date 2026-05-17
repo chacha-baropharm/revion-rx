@@ -163,10 +163,15 @@ function updateSummary(subtotal, shipping){
   el('sum-total').textContent    = fmt(subtotal + shipping);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initCart(){
   cart.updateBadge();
   renderCartPage();
-});
+}
+if (document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initCart);
+} else {
+  initCart();
+}
 
 window.cart = cart;
 window.toast = toast;
