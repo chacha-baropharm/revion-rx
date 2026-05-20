@@ -143,6 +143,20 @@ document.querySelectorAll('[data-partial]').forEach(node => {
   node.outerHTML = html || '';
 });
 
+/* Hover-reveal video on product cards (plays/pauses with hover) */
+document.querySelectorAll('.card__hover-video').forEach(video => {
+  const card = video.closest('.card');
+  if (!card) return;
+  card.addEventListener('mouseenter', () => {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
+  card.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+
 /* ----- Reusable modal helpers ----- */
 function openModal(html){
   closeModal();
